@@ -11,6 +11,7 @@ import { isFunction, get } from 'lodash'
 import { format } from 'd3-format'
 import {
     geoPath,
+    geoAlbersUsa,
     geoAzimuthalEqualArea,
     geoAzimuthalEquidistant,
     geoGnomonic,
@@ -28,6 +29,7 @@ import { useInheritedColor } from '@nivo/colors'
 import { useQuantizeColorScaleLegendData } from '@nivo/legends'
 
 export const projectionById = {
+    albersUsa: geoAlbersUsa,
     azimuthalEqualArea: geoAzimuthalEqualArea,
     azimuthalEquidistant: geoAzimuthalEquidistant,
     gnomonic: geoGnomonic,
