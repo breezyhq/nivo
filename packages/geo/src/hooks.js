@@ -54,10 +54,12 @@ export const useGeoMap = ({
     borderColor,
 }) => {
     const projection = useMemo(() => {
-        return projectionById[projectionType]()
+        let proj = projectionById[projectionType]()
             .scale(projectionScale)
             .translate([width * projectionTranslation[0], height * projectionTranslation[1]])
-            .rotate(projectionRotation)
+        if (projectionType !== "albersUsa")
+            proj = proj.rotate(projectionRotation)
+        return proj
     }, [
         width,
         height,
